@@ -1,0 +1,56 @@
+site_name: Herakleitos
+#site_description: Thales — Data & Causal & TS Analysis Toolkit
+site_url: https://eddiemummy.github.io/herakleitos-docs/   # yayınlarken doldur
+#repo_url: https://github.com/<kullanici>/<repo>  # opsiyonel
+#edit_uri: ""                                     # istersen devre dışı
+
+theme:
+  name: material
+  language: en
+  features:
+    - navigation.tabs
+    - navigation.sections
+    - content.code.copy
+    - search.suggest
+    - search.highlight
+  palette:
+    - scheme: default
+      primary: indigo
+      accent: indigo
+    - scheme: slate
+      primary: indigo
+      accent: indigo
+      toggle:
+        icon: material/weather-night
+        name: Switch to dark mode
+
+plugins:
+  - search
+  - mkdocstrings:
+      handlers:
+        python:
+          options:
+            docstring_style: google     # veya numpy
+            show_source: true
+            members_order: source
+            separate_signature: true
+            filters: ["!^_", "^__init__$"]   # private’ları gizle
+          paths:
+            - src   # paket kodu burada ise
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight
+  - pymdownx.tabbed
+  - toc:
+      permalink: true
+
+nav:
+  - Home: index.md
+  - Guides:
+      - Getting Started: guides/getting-started.md
+      - Query Examples: guides/query-examples.md
+  - API:
+      - Herakleitos: api/herakleitos.md

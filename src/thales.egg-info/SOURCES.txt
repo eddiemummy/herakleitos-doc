@@ -1,0 +1,7 @@
+pyproject.toml
+src/thales/__init__.py
+src/thales/herakleitos.py
+src/thales.egg-info/PKG-INFO
+src/thales.egg-info/SOURCES.txt
+src/thales.egg-info/dependency_links.txt
+src/thales.egg-info/top_level.txt

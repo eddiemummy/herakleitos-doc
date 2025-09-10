@@ -1,0 +1,23 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "thales"
+version = "0.1.0"
+description = "Thales — Analysis Toolkit"
+readme = "README.md"
+requires-python = ">=3.9"
+license = {text = "MIT"}
+authors = [{ name = "Your Name" }]
+
+# Bağımlılıklar (varsa)
+# dependencies = ["pandas", "numpy"]
+
+# >>> DIKKAT: [project] içinde 'packages' KULLANMA!
+
+[tool.setuptools.packages.find]
+where = ["src"]          # paketleri src altında ara
+
+[tool.setuptools.package-dir]
+"" = "src"               # kök paket dizini src'dir
