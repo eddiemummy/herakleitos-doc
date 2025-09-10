@@ -1,6 +1,6 @@
 # Query Examples by Type
 
-Use these examples as templates for forming queries in **Thales**.  
+Use these examples as templates for forming queries in **Herakleitos**.  
 Replace placeholder column names (e.g., `clicks`, `revenue`, `region`) with actual dataset columns.
 
 ---
@@ -132,4 +132,4 @@ Using signup as outcome, analyze the causal effect with predictors [traffic, dev
 - For **CausalPy**, stick to:  
   `Using <outcome> as outcome, ... predictors [a, b] at time <t>` (date or index).  
 - For **TS**, include the horizon (“next 30 days”) and, if applicable, a campaign identifier present in your data.  
-- For **Plot**, include at least two valid columns.
+- For **Plot**, include two valid columns.

@@ -1,19 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-         <loc>https://eddiemummy.github.io/herakleitos-docs/</loc>
+         <loc>https://eddiemummy.github.io/herakleitos-doc/</loc>
          <lastmod>2025-09-10</lastmod>
     </url>
     <url>
-         <loc>https://eddiemummy.github.io/herakleitos-docs/api/herakleitos/</loc>
+         <loc>https://eddiemummy.github.io/herakleitos-doc/api/herakleitos/</loc>
          <lastmod>2025-09-10</lastmod>
     </url>
     <url>
-         <loc>https://eddiemummy.github.io/herakleitos-docs/guides/getting-started/</loc>
+         <loc>https://eddiemummy.github.io/herakleitos-doc/guides/getting-started/</loc>
          <lastmod>2025-09-10</lastmod>
     </url>
     <url>
-         <loc>https://eddiemummy.github.io/herakleitos-docs/guides/query-examples/</loc>
+         <loc>https://eddiemummy.github.io/herakleitos-doc/guides/query-examples/</loc>
          <lastmod>2025-09-10</lastmod>
     </url>
 </urlset>

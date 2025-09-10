@@ -1,8 +1,6 @@
 site_name: Herakleitos
-#site_description: Thales — Data & Causal & TS Analysis Toolkit
-site_url: https://eddiemummy.github.io/herakleitos-docs/   # yayınlarken doldur
-#repo_url: https://github.com/<kullanici>/<repo>  # opsiyonel
-#edit_uri: ""                                     # istersen devre dışı
+site_url: https://eddiemummy.github.io/herakleitos-doc/
+repo_url: https://github.com/eddiemummy/herakleitos-doc
 
 theme:
   name: material
