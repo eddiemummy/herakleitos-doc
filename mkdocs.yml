@@ -52,3 +52,5 @@ nav:
       - Query Examples: guides/query-examples.md
   - API:
       - Herakleitos: api/herakleitos.md
+  - TODO:
+      - Todos: todo/todos.md
