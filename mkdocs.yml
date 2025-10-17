@@ -48,8 +48,6 @@ markdown_extensions:
 nav:
   - Home: index.md
   - Guides:
-      - Getting Started: guides/getting-started.md
-      - Query Examples: guides/query-examples.md
       - Routing Guide: guides/ROUTING_GUIDE.md
   - API:
       - Herakleitos: api/herakleitos.md
