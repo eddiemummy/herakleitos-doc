@@ -960,3 +960,55 @@ Bir veya birden fazla faktörün metrik üzerindeki etkisini inceler (ANOVA).
 | **adaptive_comparison_test** | compare, versus, vs            | “Kampanya A’yı Kampanya B ile karşılaştır.” | “Compare Campaign A vs Campaign B.”          |
 | **chi_square_test**          | all, overall, across           | “Tüm kampanyalar arasındaki farkı test et.” | “Compare all campaigns for CTR differences.” |
 | **advanced_ab_test**         | impact, effect, affect, does   | “Adset tipi CTR’ı etkiler mi?”              | “Does campaign type affect CTR?”             |
+
+---
+
+## `analyze` — Agent, Trends & Behavior
+- “How did **revenue** evolve over time? Any notable trends or spikes?”
+- “Analyze performance changes for **CTR** last month.”
+- “What explains the drop in **conversions** last week?”
+- “Investigate anomalies in **cost_per_acquisition**.”
+
+### 🇬🇧 English Queries
+
+| 🧠 Category                    | 💬 Example Query                                          | 🔍 What It Does                                 |
+| ------------------------------ | --------------------------------------------------------- | ----------------------------------------------- |
+| **Basic Summary**              | What are the columns in the dataset and their data types? | Returns `df.info()` summary.                    |
+|                                | Show dataset summary statistics.                          | Runs `df.describe()`.                           |
+|                                | List all available columns.                               | Lists `df.columns`.                             |
+| **Averages & Totals**          | What is the average CTR?                                  | Computes mean of `CTR` column.                  |
+|                                | Calculate total spend across all campaigns.               | Runs `df["spend"].sum()`.                       |
+|                                | Find the median CPC.                                      | Uses `df["CPC"].median()`.                      |
+| **Distributions**              | Describe the distribution of impressions.                 | Runs `df["impressions"].describe()`.            |
+|                                | Show value counts for device_type.                        | Uses `df["device_type"].value_counts()`.        |
+|                                | Plot a histogram of conversion rates.                     | Runs `df["conversion_rate"].plot(kind="hist")`. |
+| **Trends & Evolution**         | Plot CTR trend over time.                                 | Uses line plot over time column.                |
+|                                | Show how spend changed over the last 30 days.             | Calculates and visualizes daily change.         |
+|                                | Detect which metric shows the strongest increasing trend. | Analyzes numeric column slopes.                 |
+| **Comparisons & Correlations** | Compute correlation between spend and CTR.                | Uses `df[["spend","CTR"]].corr()`.              |
+|                                | Which columns are most correlated with ROAS?              | Calculates correlation matrix.                  |
+| **Missing & Data Quality**     | How many missing values are there per column?             | Uses `df.isna().sum()`.                         |
+|                                | Show percentage of missing data per column.               | Computes `(df.isna().mean()*100)`.              |
+|                                | Identify columns with constant values.                    | Detects columns where `df[col].nunique() == 1`. |
+
+### 🇹🇷 Türkçe Sorgular
+
+| 🧠 Kategori                       | 💬 Sorgu Örneği                                      | 🔍 Ne Yapar                                  |
+| --------------------------------- | ---------------------------------------------------- | -------------------------------------------- |
+| **Temel Özet**                    | Veri setindeki sütunlar ve veri tipleri nelerdir?    | `df.info()` çıktısını verir.                 |
+|                                   | Veri setinin genel özet istatistiklerini göster.     | `df.describe()` çalıştırır.                  |
+|                                   | Tüm sütun adlarını listele.                          | `df.columns` döndürür.                       |
+| **Ortalama & Toplam**             | CTR ortalaması nedir?                                | `df["CTR"].mean()` hesaplar.                 |
+|                                   | Kampanyalar arasındaki toplam harcamayı (spend) bul. | `df["spend"].sum()` döndürür.                |
+|                                   | CPC değerinin medyanını göster.                      | `df["CPC"].median()` hesaplar.               |
+| **Dağılımlar**                    | Impression sütununun dağılımını açıkla.              | `df["impressions"].describe()` çalıştırır.   |
+|                                   | Cihaz türlerine göre kaç satır var?                  | `df["device_type"].value_counts()` döndürür. |
+|                                   | Conversion rate histogramını çiz.                    | `df["conversion_rate"].plot(kind="hist")`.   |
+| **Trendler & Değişimler**         | CTR zaman içindeki trendini çiz.                     | Zaman serisi grafiği oluşturur.              |
+|                                   | Spend son 30 günde nasıl değişti?                    | Günlük fark ve trend hesaplar.               |
+|                                   | Hangi metrik yükselen bir eğilim gösteriyor?         | Eğilim analizi yapar.                        |
+| **Korelasyon & Karşılaştırmalar** | Spend ile CTR arasındaki korelasyonu hesapla.        | `df[["spend","CTR"]].corr()` çalıştırır.     |
+|                                   | ROAS ile en yüksek korelasyona sahip sütun hangisi?  | Korelasyon matrisi hesaplar.                 |
+| **Eksik Veri & Kalite**           | Her sütunda kaç eksik değer var?                     | `df.isna().sum()` döndürür.                  |
+|                                   | Sütunlardaki eksik veri yüzdesini göster.            | `(df.isna().mean()*100)` hesaplar.           |
+|                                   | Tüm satırlarda sabit değer taşıyan sütunları bul.    | `df[col].nunique() == 1` kontrol eder.       |
