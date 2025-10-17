@@ -1,0 +1,1985 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+      
+        <link rel="canonical" href="https://eddiemummy.github.io/herakleitos-doc/guides/ROUTING_GUIDE/">
+      
+      
+        <link rel="prev" href="../..">
+      
+      
+        <link rel="next" href="../../api/herakleitos/">
+      
+      
+      <link rel="icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.19">
+    
+    
+      
+        <title>Routing Guide - Herakleitos</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/main.7e37652d.min.css">
+      
+        
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/_mkdocstrings.css">
+    
+    <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#time-series-analysis" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../.." title="Herakleitos" class="md-header__button md-logo" aria-label="Herakleitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Herakleitos
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Routing Guide
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-hidden="true"  type="radio" name="__palette" id="__palette_0">
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="m17.75 4.09-2.53 1.94.91 3.06-2.63-1.81-2.63 1.81.91-3.06-2.53-1.94L12.44 4l1.06-3 1.06 3zm3.5 6.91-1.64 1.25.59 1.98-1.7-1.17-1.7 1.17.59-1.98L15.75 11l2.06-.05L18.5 9l.69 1.95zm-2.28 4.95c.83-.08 1.72 1.1 1.19 1.85-.32.45-.66.87-1.08 1.27C15.17 23 8.84 23 4.94 19.07c-3.91-3.9-3.91-10.24 0-14.14.4-.4.82-.76 1.27-1.08.75-.53 1.93.36 1.85 1.19-.27 2.86.69 5.83 2.89 8.02a9.96 9.96 0 0 0 8.02 2.89m-1.64 2.02a12.08 12.08 0 0 1-7.8-3.47c-2.17-2.19-3.33-5-3.49-7.82-2.81 3.14-2.7 7.96.31 10.98 3.02 3.01 7.84 3.12 10.98.31"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+        <div class="md-search__suggest" data-md-component="search-suggest"></div>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/eddiemummy/herakleitos-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="./" class="md-tabs__link">
+          
+  
+  
+  Guides
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../api/herakleitos/" class="md-tabs__link">
+          
+  
+  
+  API
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../todo/todos/" class="md-tabs__link">
+          
+  
+  
+  TODO
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../.." title="Herakleitos" class="md-nav__button md-logo" aria-label="Herakleitos" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Herakleitos
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/eddiemummy/herakleitos-doc" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.0.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2025 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Home
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    Guides
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            Guides
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    Routing Guide
+    
+  </span>
+  
+
+      </a>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    API
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            API
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../api/herakleitos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Herakleitos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+        
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    TODO
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            TODO
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../todo/todos/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    Todos
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="time-series-analysis">Time Series Analysis<a class="headerlink" href="#time-series-analysis" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Metric Sayısı</th>
+<th>🧭 Prophet</th>
+<th>🔍 Granger</th>
+<th>Açıklama (Özet)</th>
+<th>🇬🇧 Example</th>
+<th>🇹🇷 Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0</td>
+<td>✅</td>
+<td>❌</td>
+<td>Metrik belirtilmez → tüm metrikler için Prophet tahmini yapılır.</td>
+<td><em>Forecast overall campaign performance for the next 30 days.</em></td>
+<td><em>Genel kampanya performansının 30 günlük tahminini yap.</em></td>
+</tr>
+<tr>
+<td>1</td>
+<td>✅</td>
+<td>✅</td>
+<td>Tek metrik (örn. CTR) → Prophet + Granger birlikte çalışır.</td>
+<td><em>Forecast CTR for the next 15 days.</em></td>
+<td><em>CTR metriğinin önümüzdeki 15 günlük tahminini yap.</em></td>
+</tr>
+<tr>
+<td>2</td>
+<td>❌</td>
+<td>✅</td>
+<td>İki metrik varsa yalnızca Granger nedensellik testi yapılır.</td>
+<td><em>Does spend Granger-cause CTR?</em></td>
+<td><em>Spend metriği CTR’ı Granger anlamında etkiliyor mu?</em></td>
+</tr>
+<tr>
+<td>3+</td>
+<td>❌</td>
+<td>❌</td>
+<td>Fazla metrik varsa Prophet/Granger çalışmaz → uyarı döner.</td>
+<td><em>Compare CTR, spend and revenue trends together.</em></td>
+<td><em>CTR, spend ve revenue metriklerini birlikte analiz et.</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="dowhy-econml-agent-dowecon">🎯 <strong>DoWhy / EconML Agent (dowEcon)</strong><a class="headerlink" href="#dowhy-econml-agent-dowecon" title="Permanent link">&para;</a></h1>
+<p><strong>Amaç:</strong> Statik veya panel veri üzerinde “treatment → outcome” nedensel etki analizi.<br />
+<strong>Zorunlu:</strong> <code>campaign_name</code>, <code>ad_name</code><br />
+<strong>Opsiyonel:</strong> <code>treatment_time</code><br />
+<strong>Anahtar kelimeler:</strong> <code>effect of ... on ...</code>, <code>treatment</code>, <code>outcome</code>, <code>confounders</code>, <code>nedensel analiz</code>, <code>causal effect</code></p>
+<h3 id="1-basic-english-classic-dowhy-pattern">🟢 1️⃣ Basic English – classic DoWhy pattern<a class="headerlink" href="#1-basic-english-classic-dowhy-pattern" title="Permanent link">&para;</a></h3>
+<p><code>Estimate the causal effect of SPEND on CTR  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  and ad 'kubradeny' using [CPC, IMPRESSIONS] as confounders.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için harcamanın (SPEND) CTR üzerindeki nedensel etkisini [CPC, IMPRESSIONS] değişkenlerini kontrol ederek analiz et.</p>
+</blockquote>
+<hr />
+<h3 id="2-english-explicit-at-time">🟢 2️⃣ English – explicit <code>at time</code><a class="headerlink" href="#2-english-explicit-at-time" title="Permanent link">&para;</a></h3>
+<p><code>Analyze the effect of SPEND on CONVERSIONS  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  and ad 'kubradeny' using [CTR, CPC] as confounders at time 12.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için SPEND değişkeninin CONVERSIONS üzerindeki etkisini [CTR, CPC] değişkenlerini kontrol ederek zaman 12’de analiz et.</p>
+</blockquote>
+<hr />
+<h3 id="3-english-using-as-treatment-as-outcome">🟢 3️⃣ English – “using … as treatment … as outcome”<a class="headerlink" href="#3-english-using-as-treatment-as-outcome" title="Permanent link">&para;</a></h3>
+<p><code>Using SPEND as treatment and CTR as outcome,  estimate the causal effect with confounders [CPC, IMPRESSIONS]  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' and ad 'kubradeny'.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>SPEND değişkenini treatment, CTR değişkenini outcome olarak kullanarak; kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için [CPC, IMPRESSIONS] kontrol değişkenleriyle nedensel etkiyi hesapla.</p>
+</blockquote>
+<hr />
+<h3 id="4-turkish-dogal-cumle-yaps">🟢 4️⃣ Turkish – doğal cümle yapısı<a class="headerlink" href="#4-turkish-dogal-cumle-yaps" title="Permanent link">&para;</a></h3>
+<p><code>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  ve reklam 'kubradeny' için harcamanın (SPEND) CTR üzerindeki nedensel etkisini  [CPC, IMPRESSIONS] değişkenlerini kontrol ederek incele.</code></p>
+<hr />
+<h3 id="5-turkish-farkl-outcome">🟢 5️⃣ Turkish – farklı outcome<a class="headerlink" href="#5-turkish-farkl-outcome" title="Permanent link">&para;</a></h3>
+<p><code>Nedensel analiz ile kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  ve reklam 'kubradeny' için harcamanın (SPEND) satışlar (REVENUE) üzerindeki etkisini  [CPC, CTR] değişkenlerini kontrol ederek analiz et.</code></p>
+<hr />
+<p>✅ <strong>Beklenen parse çıktısı (örnek)</strong></p>
+<p><code>{   "treatment": "spend",   "outcome": "ctr",   "confounders": ["cpc", "impressions"],   "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives",   "ad_name": "kubradeny",   "treatment_time": null }</code></p>
+<hr />
+<h1 id="causalpy-agent-bayesian-synthetic-control">📊 <strong>CausalPy Agent (Bayesian / Synthetic Control)</strong><a class="headerlink" href="#causalpy-agent-bayesian-synthetic-control" title="Permanent link">&para;</a></h1>
+<p><strong>Amaç:</strong> Zaman serisi tabanlı nedensel etki / uplift analizi.<br />
+<strong>Zorunlu:</strong> <code>outcome</code>, <code>predictors</code>, <code>campaign_name</code>, <code>ad_name</code>, <code>treatment_time</code><br />
+<strong>Anahtar kelimeler:</strong> <code>causal impact</code>, <code>causal analysis on</code>, <code>using ... as outcome</code>, <code>with predictors</code>, <code>at time</code>, <code>Bayesian</code>, <code>synthetic control</code></p>
+<h3 id="1-english-canonical-pattern">🔵 1️⃣ English – canonical pattern<a class="headerlink" href="#1-english-canonical-pattern" title="Permanent link">&para;</a></h3>
+<p><code>Using CTR as outcome,  analyze the causal impact with predictors [SPEND, IMPRESSIONS]  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  and ad 'kubradeny' at time 20.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için CTR metriğini outcome olarak al, [SPEND, IMPRESSIONS] predictor değişkenleriyle zaman 20’de nedensel etkiyi analiz et.</p>
+</blockquote>
+<hr />
+<h3 id="2-english-causal-analysis-on-using-predictors">🔵 2️⃣ English – “causal analysis on … using predictors …”<a class="headerlink" href="#2-english-causal-analysis-on-using-predictors" title="Permanent link">&para;</a></h3>
+<p><code>Causal analysis on REVENUE  using [SPEND, CTR, CPC] predictors  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  and ad 'kubradeny' at time 30.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için REVENUE metriği üzerinde, [SPEND, CTR, CPC] predictor değişkenlerini kullanarak zaman 30’da nedensel analiz yap.</p>
+</blockquote>
+<hr />
+<h3 id="3-english-effect-on-with-predictors-time">🔵 3️⃣ English – “effect on … with predictors … time …”<a class="headerlink" href="#3-english-effect-on-with-predictors-time" title="Permanent link">&para;</a></h3>
+<p><code>Effect on CONVERSIONS  with predictors [SPEND, CTR, CPC]  for campaign 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  and ad 'kubradeny' time 15.</code></p>
+<p>➡️ Türkçe:</p>
+<blockquote>
+<p>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için CONVERSIONS üzerindeki etkiyi [SPEND, CTR, CPC] predictor’larıyla zaman 15’te analiz et.</p>
+</blockquote>
+<hr />
+<h3 id="4-turkish-bayesian-vurgulu">🔵 4️⃣ Turkish – Bayesian vurgulu<a class="headerlink" href="#4-turkish-bayesian-vurgulu" title="Permanent link">&para;</a></h3>
+<p><code>Bayes analizi ile kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives'  ve reklam 'kubradeny' için REVENUE metriğini bağımlı değişken olarak al,  [SPEND, CTR, CPC] predictor’larıyla zaman 25’te etkiyi ölç.</code></p>
+<hr />
+<h3 id="5-turkish-minimalist-dogal-ifade">🔵 5️⃣ Turkish – minimalist doğal ifade<a class="headerlink" href="#5-turkish-minimalist-dogal-ifade" title="Permanent link">&para;</a></h3>
+<p><code>Kampanya 'TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives' ve reklam 'kubradeny' için  CTR metriğini outcome olarak al, [SPEND, IMPRESSIONS] predictor değişkenleriyle zaman 10’da Bayesian nedensel etki analizi yap.</code></p>
+<hr />
+<p>✅ <strong>Beklenen parse çıktısı (örnek)</strong></p>
+<p><code>{   "outcome": "ctr",   "predictors": ["spend", "impressions"],   "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_apr2025_aicreatives",   "ad_name": "kubradeny",   "treatment_time": 20 }</code></p>
+<table>
+<thead>
+<tr>
+<th>Özellik</th>
+<th>DoWhy (dowEcon)</th>
+<th>CausalPy</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>🎯 Amaç</td>
+<td>Statik / panel veri üzerinde nedensel ilişki</td>
+<td>Zaman serisi üzerinde nedensel etki (öncesi-sonrası)</td>
+</tr>
+<tr>
+<td>🔑 Anahtar kelime</td>
+<td>“effect of … on …”, “treatment”, “outcome”, “confounders”</td>
+<td>“causal impact”, “causal analysis on …”, “using … as outcome”, “with predictors”, “at time”</td>
+</tr>
+<tr>
+<td>🕒 Zaman</td>
+<td>Opsiyonel</td>
+<td>🔥 Zorunlu</td>
+</tr>
+<tr>
+<td>📦 Parser</td>
+<td><code>parse_dowhy_query()</code></td>
+<td><code>parse_causalpy_query()</code></td>
+</tr>
+<tr>
+<td>🧩 Regex tetikleyicisi</td>
+<td><code>effect\s+of\s+(\w+)\s+on\s+(\w+)</code></td>
+<td>`causal\s+(impact</td>
+</tr>
+<tr>
+<td>📊 Örnek</td>
+<td><em>Effect of SPEND on CTR using [CPC, IMPRESSIONS]</em></td>
+<td><em>Using CTR as outcome with predictors [SPEND, IMPRESSIONS] at time 20</em></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="association-rules">🧩 <strong>Association Rules</strong><a class="headerlink" href="#association-rules" title="Permanent link">&para;</a></h1>
+<h2 id="1-genel-analiz-campaign-level-entity-yok">1️⃣ <strong>GENEL ANALİZ (Campaign-level, entity yok)</strong><a class="headerlink" href="#1-genel-analiz-campaign-level-entity-yok" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Tüm kampanyaları birlikte değerlendirir.<br />
+🔹 <code>level = campaign_name</code>, <code>entity = None</code></p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Genel kampanya düzeyinde birliktelik kurallarını çıkar."</p>
+</li>
+<li>
+<p>"Kampanya bazında en güçlü 25 birliktelik kuralını göster."</p>
+</li>
+<li>
+<p>"Tüm kampanyalar için 0.05 destek ve 0.6 güven eşiğiyle birliktelik kuralları oluştur."</p>
+</li>
+<li>
+<p>"Kampanya düzeyinde lift 1.5’in üzerindeki kuralları çıkar."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"Generate association rules at the campaign level."</p>
+</li>
+<li>
+<p>"Show the top 25 association rules across all campaigns."</p>
+</li>
+<li>
+<p>"Mine rules for all campaigns with support 0.05 and confidence 0.6."</p>
+</li>
+<li>
+<p>"Find campaign-level rules with lift above 1.5."</p>
+</li>
+</ul>
+<hr />
+<h2 id="2-belirli-entity-ornek-kampanya-ismi-belirtilmis">2️⃣ <strong>BELİRLİ ENTITY (örnek: Kampanya ismi belirtilmiş)</strong><a class="headerlink" href="#2-belirli-entity-ornek-kampanya-ismi-belirtilmis" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Sadece belirtilen kampanya için kurallar çıkarılır.<br />
+🔹 <code>entity = "Nike"</code>, <code>level = campaign_name</code></p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Nike kampanyası için birliktelik kurallarını göster."</p>
+</li>
+<li>
+<p>"Adidas kampanyasında lift değeri 1.3’ten yüksek kuralları çıkar."</p>
+</li>
+<li>
+<p>"‘Summer Sale’ kampanyası için 0.04 destek ve 0.7 güven ile birliktelik kurallarını üret."</p>
+</li>
+<li>
+<p>"‘Black Friday’ kampanyası için kampanya düzeyinde kuralları çıkar."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"Show association rules for the Nike campaign."</p>
+</li>
+<li>
+<p>"Generate association rules for the Adidas campaign with lift &gt; 1.3."</p>
+</li>
+<li>
+<p>"For the 'Summer Sale' campaign, use min support 0.04 and confidence 0.7."</p>
+</li>
+<li>
+<p>"Extract campaign-level association rules for the 'Black Friday' campaign."</p>
+</li>
+</ul>
+<hr />
+<h2 id="3-adset-duzeyinde-analiz">3️⃣ <strong>ADSET DÜZEYİNDE ANALİZ</strong><a class="headerlink" href="#3-adset-duzeyinde-analiz" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Reklam seti (adset) seviyesinde kurallar çıkarılır.<br />
+🔹 <code>level = adset_name</code></p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Ad set düzeyinde birliktelik kurallarını çıkar."</p>
+</li>
+<li>
+<p>"‘Promo Audience’ reklam seti için 0.03 destek, 0.6 güven ile kuralları bul."</p>
+</li>
+<li>
+<p>"Ad set bazında lift 1.4 üzerindeki ilişkileri göster."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"Generate association rules at the adset level."</p>
+</li>
+<li>
+<p>"Find rules for the 'Promo Audience' ad set with support 0.03 and confidence 0.6."</p>
+</li>
+<li>
+<p>"List adset-level rules with lift greater than 1.4."</p>
+</li>
+</ul>
+<hr />
+<h2 id="4-ad-creative-duzeyinde-analiz">4️⃣ <strong>AD (Creative) DÜZEYİNDE ANALİZ</strong><a class="headerlink" href="#4-ad-creative-duzeyinde-analiz" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Belirli bir reklam (creative/ad) için kurallar.<br />
+🔹 <code>level = ad_name</code></p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Reklam düzeyinde birliktelik kurallarını çıkar."</p>
+</li>
+<li>
+<p>"‘Creative A’ reklamı için en yüksek lift değerli kuralları göster."</p>
+</li>
+<li>
+<p>"Reklam bazında 0.05 destek, 0.65 güven ile FP-Growth algoritması kullan."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"Generate association rules at the ad level."</p>
+</li>
+<li>
+<p>"Show rules with the highest lift for the 'Creative A' ad."</p>
+</li>
+<li>
+<p>"At the ad level, use FP-Growth algorithm with support 0.05 and confidence 0.65."</p>
+</li>
+</ul>
+<hr />
+<h2 id="5-parametreli-sorgular-support-confidence-lift-max_len">5️⃣ <strong>PARAMETRELİ SORGULAR (support / confidence / lift / max_len)</strong><a class="headerlink" href="#5-parametreli-sorgular-support-confidence-lift-max_len" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Sayısal parametreler belirlenir.<br />
+🔹 <code>_find_float</code> ve <code>_find_int</code> ile parse edilir.</p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Kampanya düzeyinde min destek 3%, güven 0.7, lift 1.2, max len 4 olsun."</p>
+</li>
+<li>
+<p>"0.04 destek, 0.75 güven eşiğiyle FP-Growth algoritmasını kullanarak kuralları çıkar."</p>
+</li>
+<li>
+<p>"Apriori algoritmasıyla lift 1.5 üzerinde ve maksimum itemset uzunluğu 3 olan kuralları üret."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"At the campaign level, use support 3%, confidence 0.7, lift 1.2, and max len 4."</p>
+</li>
+<li>
+<p>"Mine rules using FP-Growth with min support 0.04 and confidence 0.75."</p>
+</li>
+<li>
+<p>"Use Apriori algorithm, lift above 1.5, and maximum itemset length 3."</p>
+</li>
+</ul>
+<hr />
+<h2 id="6-groupwise-segment-bazl-binning">6️⃣ <strong>GROUPWISE (Segment bazlı binning)</strong><a class="headerlink" href="#6-groupwise-segment-bazl-binning" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Her kampanya/adset için ayrı kurallar oluşturur.<br />
+🔹 <code>groupwise_bins=True</code></p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"Her kampanya için ayrı (groupwise) birliktelik kurallarını üret."</p>
+</li>
+<li>
+<p>"Segment bazında (adset başına) 0.05 destek ve 0.6 güven ile kuralları bul."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"Generate groupwise association rules per campaign."</p>
+</li>
+<li>
+<p>"For each ad set (segment-wise), mine rules with support 0.05 and confidence 0.6."</p>
+</li>
+</ul>
+<hr />
+<h2 id="7-karma-algoritma-entity-seviye-parametre-birlikte">7️⃣ <strong>KARMA (Algoritma + Entity + Seviye + Parametre birlikte)</strong><a class="headerlink" href="#7-karma-algoritma-entity-seviye-parametre-birlikte" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Gerçek senaryo testleri için tam kombinasyon.<br />
+🔹 <code>guess_level_from_text</code>, <code>guess_entity_from_text</code>, <code>_find_algo</code>, <code>_find_float</code> hepsi devrede.</p>
+</blockquote>
+<p><strong>🇹🇷 Türkçe</strong></p>
+<ul>
+<li>
+<p>"‘Holiday Promo’ kampanyası için adset düzeyinde FP-Growth algoritmasıyla, 0.04 destek, 0.7 güven, lift 1.3 parametreleriyle kuralları çıkar."</p>
+</li>
+<li>
+<p>"‘Creative A’ reklamı için Apriori algoritmasını kullan, destek %5, güven 0.6, max len 3 olsun."</p>
+</li>
+</ul>
+<p><strong>🇬🇧 English</strong></p>
+<ul>
+<li>
+<p>"For the 'Holiday Promo' campaign at adset level, use FP-Growth algorithm with support 0.04, confidence 0.7, and lift 1.3."</p>
+</li>
+<li>
+<p>"Use Apriori algorithm for the 'Creative A' ad with support 5%, confidence 0.6, and max len 3."</p>
+</li>
+</ul>
+<hr />
+<h2 id="8-turkceingilizce-karisik-robust-parsing-testi">8️⃣ <strong>TÜRKÇE–İNGİLİZCE KARIŞIK (Robust Parsing Testi)</strong><a class="headerlink" href="#8-turkceingilizce-karisik-robust-parsing-testi" title="Permanent link">&para;</a></h2>
+<blockquote>
+<p>🔹 Çok dilli sorguların parse dayanıklılığını test eder.<br />
+🔹 LLM + regex parsing uyumluluğunu doğrular.</p>
+</blockquote>
+<p><strong>Mixed Queries</strong></p>
+<ul>
+<li>
+<p>"FP-Growth algoritmasıyla 0.05 support ve 0.7 confidence değerleriyle campaign level rules çıkar."</p>
+</li>
+<li>
+<p>"Find association rules for 'Promo Adset' adset düzeyinde, min_support=0.03, lift&gt;1.4."</p>
+</li>
+</ul>
+<h2 id="parsing-mantg-ozeti">🧠 <strong>Parsing Mantığı Özeti</strong><a class="headerlink" href="#parsing-mantg-ozeti" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Özellik</th>
+<th>Fonksiyon</th>
+<th>Algıladığı Şey</th>
+<th>Örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Level</strong></td>
+<td><code>guess_level_from_text</code></td>
+<td>campaign / adset / ad</td>
+<td>“adset düzeyinde kurallar” → <code>adset_name</code></td>
+</tr>
+<tr>
+<td><strong>Entity</strong></td>
+<td><code>guess_entity_from_text</code></td>
+<td>spesifik kampanya/ad/adset</td>
+<td>“Nike kampanyası için ...” → <code>Nike</code></td>
+</tr>
+<tr>
+<td><strong>Parametreler</strong></td>
+<td><code>_find_float</code>, <code>_find_int</code></td>
+<td>support, confidence, lift, max len</td>
+<td>“0.04 destek, 0.7 güven”</td>
+</tr>
+<tr>
+<td><strong>Algoritma</strong></td>
+<td><code>_find_algo</code></td>
+<td>apriori / fpgrowth / eclat</td>
+<td>“FP-Growth algoritmasıyla”</td>
+</tr>
+<tr>
+<td><strong>Groupwise</strong></td>
+<td><code>_find_groupwise</code></td>
+<td>True / False</td>
+<td>“Her kampanya için ayrı (groupwise)”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h1 id="shap-agent">🧩 <strong>SHAP Agent</strong><a class="headerlink" href="#shap-agent" title="Permanent link">&para;</a></h1>
+<h2 id="temel-mantk">🔍 <strong>Temel Mantık</strong><a class="headerlink" href="#temel-mantk" title="Permanent link">&para;</a></h2>
+<p><code>extract_shap_target_column()</code> fonksiyonu, kullanıcı sorgusundaki metrik adını otomatik olarak SHAP hedefi (<code>target_var</code>) olarak seçer.</p>
+<p><code>for col in available_columns:     if col.lower() in query:         return col</code></p>
+<p>🔹 Yani query içinde <code>CTR</code>, <code>Revenue</code>, <code>Spend</code>, <code>Conversions</code>, <code>Clicks</code>, <code>CPC</code> gibi bir <strong>kolon adı</strong> geçerse o metrik SHAP analizi hedefi olur.<br />
+🔹 Eğer hiçbir kolon adı geçmezse, fonksiyon <code>None</code> döner → analiz başlamaz.</p>
+<hr />
+<h2 id="analiz-aks">⚙️ <strong>Analiz Akışı</strong><a class="headerlink" href="#analiz-aks" title="Permanent link">&para;</a></h2>
+<p>1️⃣ <strong>Query parsing:</strong><br />
+→ “CTR” gibi bir metrik yakalanır → <code>target_var = "CTR"</code></p>
+<p>2️⃣ <strong>Model eğitimi:</strong><br />
+→ <code>getBestModel(cleaned_df, target_var)</code> çağrılır → en iyi tahmin modeli eğitilir</p>
+<p>3️⃣ <strong>SHAP analizi:</strong><br />
+→ <code>shap_summary.png</code> grafiği + SHAP JSON çıktısı oluşturulur</p>
+<p>4️⃣ <strong>LLM yorumu:</strong><br />
+→ <code>shap_agent()</code> çalışır → teknik + işsel yorumlar üretilir (dual-layer report)</p>
+<hr />
+<h2 id="nasl-calsr">🧠 <strong>Nasıl Çalışır</strong><a class="headerlink" href="#nasl-calsr" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Durum</th>
+<th>Sistem davranışı</th>
+<th>Kod karşılığı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Query bir metrik içeriyor</td>
+<td>✅ Model eğitilir + SHAP analizi üretilir</td>
+<td><code>getBestModel()</code> + <code>shap_agent()</code></td>
+</tr>
+<tr>
+<td>Query’de hiçbir metrik yok</td>
+<td>❌ Hedef kolon bulunamaz → hata mesajı döner</td>
+<td><code>extract_shap_target_column() → None</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="turkce-query-ornekleri">🧩 <strong>Türkçe Query Örnekleri</strong><a class="headerlink" href="#turkce-query-ornekleri" title="Permanent link">&para;</a></h2>
+<h3 id="genel-performans-acklamalar">🎯 <strong>Genel Performans Açıklamaları</strong><a class="headerlink" href="#genel-performans-acklamalar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"CTR değerini etkileyen en önemli faktörleri analiz et."</p>
+</li>
+<li>
+<p>"Revenue değişkenine en çok hangi değişkenler etki ediyor?"</p>
+</li>
+<li>
+<p>"Spend metriği için SHAP analizi yap, hangi özellikler öne çıkıyor?"</p>
+</li>
+<li>
+<p>"Conversions’ı etkileyen faktörleri SHAP değerlerine göre sırala."</p>
+</li>
+<li>
+<p>"CPC değişkeni üzerinde en büyük etkiye sahip değişkenleri bul."</p>
+</li>
+<li>
+<p>"Clicks değerine göre hangi değişkenler pozitif ya da negatif etki yapıyor?"</p>
+</li>
+<li>
+<p>"Revenue için SHAP feature importance analizi yap."</p>
+</li>
+<li>
+<p>"CTR tahmininde hangi değişkenler modelin kararını en çok etkiledi?"</p>
+</li>
+<li>
+<p>"Spend metriği için modelin açıklanabilirliğini SHAP ile incele."</p>
+</li>
+<li>
+<p>"Conversions metriğine göre SHAP grafiğini oluştur."</p>
+</li>
+</ul>
+<h3 id="model-degerlendirme-karslastrma-odakl">🔍 <strong>Model Değerlendirme / Karşılaştırma Odaklı</strong><a class="headerlink" href="#model-degerlendirme-karslastrma-odakl" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"CTR tahmininde model performansını ve SHAP önem derecelerini raporla."</p>
+</li>
+<li>
+<p>"Revenue için SHAP özet grafiği çıkar, hangi değişkenler baskın?"</p>
+</li>
+<li>
+<p>"Spend tahmininde SHAP değerlerine göre pozitif/negatif etki yapan değişkenleri açıkla."</p>
+</li>
+<li>
+<p>"Conversions metriğini en çok etkileyen faktörleri görselleştir."</p>
+</li>
+</ul>
+<hr />
+<h2 id="english-query-examples">🧩 <strong>English Query Examples</strong><a class="headerlink" href="#english-query-examples" title="Permanent link">&para;</a></h2>
+<h3 id="standard-shap-analysis">🎯 <strong>Standard SHAP Analysis</strong><a class="headerlink" href="#standard-shap-analysis" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Run SHAP analysis for CTR."</p>
+</li>
+<li>
+<p>"Which features most strongly affect Revenue?"</p>
+</li>
+<li>
+<p>"Analyze SHAP feature importance for Spend metric."</p>
+</li>
+<li>
+<p>"Show which variables drive Conversions up or down."</p>
+</li>
+<li>
+<p>"Perform SHAP analysis on CPC variable."</p>
+</li>
+<li>
+<p>"What are the top SHAP factors influencing Clicks?"</p>
+</li>
+<li>
+<p>"Explain feature impact on CTR predictions."</p>
+</li>
+<li>
+<p>"Generate SHAP summary for Spend."</p>
+</li>
+<li>
+<p>"Identify top positive and negative contributors for Revenue."</p>
+</li>
+<li>
+<p>"Run interpretability analysis for Conversions using SHAP."</p>
+</li>
+</ul>
+<h3 id="model-shap-together">🧮 <strong>Model + SHAP Together</strong><a class="headerlink" href="#model-shap-together" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Explain the SHAP results for CTR model, include performance metrics."</p>
+</li>
+<li>
+<p>"Which features have the strongest SHAP importance for Revenue?"</p>
+</li>
+<li>
+<p>"Show SHAP summary plot for CPC and discuss model reliability."</p>
+</li>
+<li>
+<p>"Analyze SHAP feature rankings for Spend prediction model."</p>
+</li>
+<li>
+<p>"Report top 10 SHAP important features for Conversions."</p>
+</li>
+</ul>
+<hr />
+<h2 id="amac-bazl-tablo">🧾 <strong>Amaç Bazlı Tablo</strong><a class="headerlink" href="#amac-bazl-tablo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>🎯 Amaç</th>
+<th>🇹🇷 Örnek Query</th>
+<th>🇬🇧 English Equivalent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>CTR etkileyen faktörleri bul</td>
+<td>"CTR değerini etkileyen değişkenleri analiz et."</td>
+<td>"Analyze which features impact CTR the most."</td>
+</tr>
+<tr>
+<td>Revenue tahmini SHAP analizi</td>
+<td>"Revenue metriği için SHAP analizi yap."</td>
+<td>"Run SHAP analysis for Revenue."</td>
+</tr>
+<tr>
+<td>Spend açıklanabilirliği</td>
+<td>"Spend değerine göre SHAP önem derecelerini çıkar."</td>
+<td>"Generate SHAP importance summary for Spend."</td>
+</tr>
+<tr>
+<td>Conversions yorumu</td>
+<td>"Conversions üzerindeki en önemli faktörleri sırala."</td>
+<td>"Explain SHAP results for Conversions metric."</td>
+</tr>
+<tr>
+<td>CPC içgörüleri</td>
+<td>"CPC metriği için SHAP feature importance analiz et."</td>
+<td>"Perform SHAP analysis on CPC."</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="ozet-tablo">📊 <strong>Özet Tablo</strong><a class="headerlink" href="#ozet-tablo" title="Permanent link">&para;</a></h2>
+<table>
+<thead>
+<tr>
+<th>Durum</th>
+<th>Hedef metrik</th>
+<th>Sistem çıktısı</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>✅ Query “CTR”, “Revenue”, “Spend”, “CPC”, “Clicks”, “Conversions” içeriyor</td>
+<td><code>target_var</code> tespit edilir</td>
+<td>Model eğitilir → <code>shap_summary.png</code> + JSON + LLM raporu</td>
+</tr>
+<tr>
+<td>❌ Query’de hiçbir metrik geçmiyor</td>
+<td><code>target_var = None</code></td>
+<td>Hata mesajı: “No valid target column found for SHAP analysis.”</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="neden-bu-ornekler-uygun">💡 <strong>Neden Bu Örnekler Uygun?</strong><a class="headerlink" href="#neden-bu-ornekler-uygun" title="Permanent link">&para;</a></h2>
+<ul>
+<li>
+<p>Her sorgu <strong>available_columns</strong> listesindeki metriklerden en az birini içeriyor.</p>
+</li>
+<li>
+<p>Böylece <code>extract_shap_target_column()</code> fonksiyonu doğrudan doğruya hedefi buluyor.</p>
+</li>
+<li>
+<p><code>getBestModel()</code> + <code>shap_agent()</code> birlikte çalışarak hem teknik (SHAP values) hem işsel (LLM insight) yorum üretiyor.</p>
+</li>
+</ul>
+<hr />
+<h1 id="eda-agent">🧮 <strong>EDA Agent</strong><a class="headerlink" href="#eda-agent" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>🎯 Amaç: İki değişken arasındaki <strong>istatistiksel ilişkiyi veya farkı</strong> test eder.<br />
+Türüne göre otomatik olarak uygun yöntem kullanılır:</p>
+<ul>
+<li>
+<p>Numeric–Numeric → korelasyon testleri (Pearson, Spearman, Kendall)</p>
+</li>
+<li>
+<p>Numeric–Categorical → ANOVA, Kruskal–Wallis</p>
+</li>
+<li>
+<p>Categorical–Categorical → Khi-kare, Cramér’s V
+</p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="english-eda-queries">🇬🇧 <strong>English EDA Queries</strong><a class="headerlink" href="#english-eda-queries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Is there a relationship between CTR and Spend?"</p>
+</li>
+<li>
+<p>"Check the correlation between Revenue and CPC."</p>
+</li>
+<li>
+<p>"Compare Clicks and Impressions — are they statistically related?"</p>
+</li>
+<li>
+<p>"Do different campaign types affect CTR?"</p>
+</li>
+<li>
+<p>"Is there a significant difference in Revenue across Regions?"</p>
+</li>
+<li>
+<p>"Does CPC vary by campaign type?"</p>
+</li>
+<li>
+<p>"Are high CTR campaigns also high in Conversions?"</p>
+</li>
+<li>
+<p>"Is there any association between Device Type and Clicks?"</p>
+</li>
+<li>
+<p>"Does Spend correlate with Conversions?"</p>
+</li>
+<li>
+<p>"Are Revenue and Spend positively correlated?"</p>
+</li>
+</ul>
+<hr />
+<h3 id="turkce-eda-sorgular">🇹🇷 <strong>Türkçe EDA Sorguları</strong><a class="headerlink" href="#turkce-eda-sorgular" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"CTR ile Spend arasında ilişki var mı?"</p>
+</li>
+<li>
+<p>"Revenue ile CPC arasındaki korelasyonu kontrol et."</p>
+</li>
+<li>
+<p>"Clicks ve Impressions arasında istatistiksel bir ilişki var mı?"</p>
+</li>
+<li>
+<p>"Kampanya tipi CTR üzerinde etkili mi?"</p>
+</li>
+<li>
+<p>"Farklı bölgeler arasında Revenue farkı anlamlı mı?"</p>
+</li>
+<li>
+<p>"CPC kampanya türüne göre değişiyor mu?"</p>
+</li>
+<li>
+<p>"Yüksek CTR kampanyaları daha fazla Conversions üretiyor mu?"</p>
+</li>
+<li>
+<p>"Cihaz tipi ile Clicks arasında anlamlı bir ilişki var mı?"</p>
+</li>
+<li>
+<p>"Spend ile Conversions arasında ilişki var mı?"</p>
+</li>
+<li>
+<p>"Revenue ve Spend pozitif korelasyon gösteriyor mu?"</p>
+</li>
+</ul>
+<hr />
+<h1 id="plot-agent">📊 <strong>Plot Agent</strong><a class="headerlink" href="#plot-agent" title="Permanent link">&para;</a></h1>
+<blockquote>
+<p>🎨 Amaç: İki metrik arasındaki ilişkiyi <strong>grafikle gösterir.</strong><br />
+Türüne göre otomatik grafik seçimi yapılır:</p>
+<ul>
+<li>
+<p>Numeric–Numeric → Scatterplot, Regression Line</p>
+</li>
+<li>
+<p>Numeric–Categorical → Boxplot / Violin plot</p>
+</li>
+<li>
+<p>Categorical–Categorical → Mosaic / Count plot
+</p>
+</li>
+</ul>
+</blockquote>
+<hr />
+<h3 id="english-plot-queries">🇬🇧 <strong>English Plot Queries</strong><a class="headerlink" href="#english-plot-queries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Plot CTR and Spend."</p>
+</li>
+<li>
+<p>"Show the relationship between Revenue and CPC."</p>
+</li>
+<li>
+<p>"Visualize Clicks vs Impressions."</p>
+</li>
+<li>
+<p>"Display Spend vs Conversions chart."</p>
+</li>
+<li>
+<p>"Plot CTR against Campaign Type."</p>
+</li>
+<li>
+<p>"Show boxplot of Revenue by Region."</p>
+</li>
+<li>
+<p>"Create scatter plot for CTR and CPC."</p>
+</li>
+<li>
+<p>"Plot Conversions versus Spend."</p>
+</li>
+<li>
+<p>"Visualize how Revenue changes with Impressions."</p>
+</li>
+<li>
+<p>"Show chart comparing CTR and Device Type."</p>
+</li>
+</ul>
+<hr />
+<h3 id="turkce-plot-sorgular">🇹🇷 <strong>Türkçe Plot Sorguları</strong><a class="headerlink" href="#turkce-plot-sorgular" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"CTR ve Spend grafiğini çiz."</p>
+</li>
+<li>
+<p>"Revenue ile CPC arasındaki ilişkiyi göster."</p>
+</li>
+<li>
+<p>"Clicks ve Impressions için bir görselleştirme oluştur."</p>
+</li>
+<li>
+<p>"Spend ile Conversions grafiğini göster."</p>
+</li>
+<li>
+<p>"CTR’yi kampanya türüne göre çiz."</p>
+</li>
+<li>
+<p>"Bölgelere göre Revenue boxplot’unu oluştur."</p>
+</li>
+<li>
+<p>"CTR ile CPC arasındaki scatter plot’u oluştur."</p>
+</li>
+<li>
+<p>"Conversions ve Spend arasındaki ilişkiyi görselleştir."</p>
+</li>
+<li>
+<p>"Revenue’nun Impressions’a göre nasıl değiştiğini göster."</p>
+</li>
+<li>
+<p>"CTR ve cihaz türü arasındaki farkları çiz."</p>
+</li>
+</ul>
+<hr />
+<h1 id="wiki-agent">🌍 <strong>Wiki Agent</strong><a class="headerlink" href="#wiki-agent" title="Permanent link">&para;</a></h1>
+<h2 id="turkce-query-ornekleri_1">🧩 <strong>Türkçe Query Örnekleri</strong><a class="headerlink" href="#turkce-query-ornekleri_1" title="Permanent link">&para;</a></h2>
+<h3 id="genel-kavramlar">🎓 Genel Kavramlar<a class="headerlink" href="#genel-kavramlar" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"CTR nedir?"</p>
+</li>
+<li>
+<p>"ROAS ne demektir?"</p>
+</li>
+<li>
+<p>"Varyans nasıl hesaplanır?"</p>
+</li>
+<li>
+<p>"Korelasyon katsayısı nedir?"</p>
+</li>
+<li>
+<p>"Entropi kavramını açıkla."</p>
+</li>
+<li>
+<p>"Makine öğrenmesi nedir?"</p>
+</li>
+<li>
+<p>"Lineer regresyon nasıl çalışır?"</p>
+</li>
+<li>
+<p>"Derin öğrenme ve sinir ağları arasındaki fark nedir?"</p>
+</li>
+<li>
+<p>"Bayes teoremi nedir?"</p>
+</li>
+<li>
+<p>"Standard sapma nasıl bulunur?"</p>
+</li>
+</ul>
+<h3 id="matematiksel-bilimsel-sorgular">🧮 Matematiksel / Bilimsel Sorgular<a class="headerlink" href="#matematiksel-bilimsel-sorgular" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"E=mc² formülü ne anlama geliyor?"</p>
+</li>
+<li>
+<p>"Pythagoras teoremi nedir?"</p>
+</li>
+<li>
+<p>"Normal dağılım eğrisi neyi ifade eder?"</p>
+</li>
+<li>
+<p>"T-testi nedir ve nasıl kullanılır?"</p>
+</li>
+<li>
+<p>"Gradient Descent nasıl çalışır?"</p>
+</li>
+<li>
+<p>"Z skorunun anlamı nedir?"</p>
+</li>
+<li>
+<p>"Monte Carlo simülasyonu nedir?"</p>
+</li>
+<li>
+<p>"R^2 istatistiği nasıl yorumlanır?"</p>
+</li>
+</ul>
+<h3 id="tarih-genel-kultur">🌐 Tarih / Genel Kültür<a class="headerlink" href="#tarih-genel-kultur" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Aristoteles kimdir?"</p>
+</li>
+<li>
+<p>"Büyük Patlama teorisi nedir?"</p>
+</li>
+<li>
+<p>"İkinci Dünya Savaşı ne zaman başladı?"</p>
+</li>
+<li>
+<p>"Kuantum fiziği neyi inceler?"</p>
+</li>
+<li>
+<p>"DNA kim tarafından keşfedildi?"</p>
+</li>
+</ul>
+<hr />
+<h2 id="english-query-examples_1">🧩 <strong>English Query Examples</strong><a class="headerlink" href="#english-query-examples_1" title="Permanent link">&para;</a></h2>
+<h3 id="general-concepts">🎓 General Concepts<a class="headerlink" href="#general-concepts" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"What is CTR?"</p>
+</li>
+<li>
+<p>"Define entropy."</p>
+</li>
+<li>
+<p>"What does ROAS mean?"</p>
+</li>
+<li>
+<p>"Explain variance and standard deviation."</p>
+</li>
+<li>
+<p>"What is correlation coefficient?"</p>
+</li>
+<li>
+<p>"What is machine learning?"</p>
+</li>
+<li>
+<p>"Describe linear regression."</p>
+</li>
+<li>
+<p>"What is the difference between deep learning and neural networks?"</p>
+</li>
+<li>
+<p>"What does Bayes’ theorem state?"</p>
+</li>
+<li>
+<p>"How is standard deviation calculated?"</p>
+</li>
+</ul>
+<h3 id="math-science-queries">🧮 Math / Science Queries<a class="headerlink" href="#math-science-queries" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Explain the formula E = mc^2."</p>
+</li>
+<li>
+<p>"What is the Pythagorean theorem?"</p>
+</li>
+<li>
+<p>"Describe the normal distribution curve."</p>
+</li>
+<li>
+<p>"What is a t-test and when is it used?"</p>
+</li>
+<li>
+<p>"How does gradient descent work?"</p>
+</li>
+<li>
+<p>"Interpret the R-squared statistic."</p>
+</li>
+<li>
+<p>"What is Monte Carlo simulation?"</p>
+</li>
+</ul>
+<h3 id="history-culture">🌐 History / Culture<a class="headerlink" href="#history-culture" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Who was Aristotle?"</p>
+</li>
+<li>
+<p>"What is the Big Bang theory?"</p>
+</li>
+<li>
+<p>"When did World War II begin?"</p>
+</li>
+<li>
+<p>"What does quantum physics study?"</p>
+</li>
+<li>
+<p>"Who discovered DNA?"</p>
+</li>
+</ul>
+<hr />
+<h1 id="ab-test-toolkit">🧪 A/B TEST TOOLKIT<a class="headerlink" href="#ab-test-toolkit" title="Permanent link">&para;</a></h1>
+<p><em>(Türkçe + İngilizce tam set — tüm 5 method tipi için)</em></p>
+<hr />
+<h2 id="1-basic_ab_test">1️⃣ <strong>basic_ab_test</strong><a class="headerlink" href="#1-basic_ab_test" title="Permanent link">&para;</a></h2>
+<p>💡 <em>Anahtar kelimeler:</em> <code>"top"</code>, <code>"best"</code>, <code>"rank"</code>, <code>"sorted"</code>, <code>"show"</code>, <code>"what is"</code>, <code>"value of"</code></p>
+<p>📘 <em>Amaç:</em><br />
+Belirli bir seviyede (genellikle <code>adset_name</code>) metriklerin sıralı özetini gösterir.<br />
+Yani basit "kim daha iyi?" türü sorular.</p>
+<hr />
+<h3 id="turkce">🇹🇷 Türkçe<a class="headerlink" href="#turkce" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"En yüksek CTR’a sahip kampanyalar hangileri?"</p>
+</li>
+<li>
+<p>"Reklam setlerini CTR değerine göre sırala."</p>
+</li>
+<li>
+<p>"En iyi performans gösteren reklam setlerini göster."</p>
+</li>
+<li>
+<p>"CTR değeri en yüksek 10 reklam setini listele."</p>
+</li>
+<li>
+<p>"Hangi kampanya en düşük CPC’ye sahip?"</p>
+</li>
+<li>
+<p>"Top 5 kampanyayı CTR açısından sırala."</p>
+</li>
+<li>
+<p>"Reklamları CTR’a göre sıralar mısın?"</p>
+</li>
+<li>
+<p>"CTR değerine göre sıralanmış kampanyaları göster."</p>
+</li>
+<li>
+<p>"En iyi performanslı creative’leri göster."</p>
+</li>
+</ul>
+<h3 id="english">🇬🇧 English<a class="headerlink" href="#english" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Show the top campaigns by CTR."</p>
+</li>
+<li>
+<p>"Which ad sets have the highest CTR?"</p>
+</li>
+<li>
+<p>"Rank ads by CPC value."</p>
+</li>
+<li>
+<p>"List the best performing ad sets."</p>
+</li>
+<li>
+<p>"Show the top 10 campaigns sorted by CTR."</p>
+</li>
+<li>
+<p>"Which campaign has the lowest CPC?"</p>
+</li>
+<li>
+<p>"Rank all ads by performance metric CTR."</p>
+</li>
+<li>
+<p>"Show campaigns ranked by CTR value."</p>
+</li>
+</ul>
+<hr />
+<h2 id="2-specific_entity_ab_test">2️⃣ <strong>specific_entity_ab_test</strong><a class="headerlink" href="#2-specific_entity_ab_test" title="Permanent link">&para;</a></h2>
+<p>💡 <em>Anahtar kelimeler:</em> tek bir entity içeren sorgular (ör. “Nike campaign”), <em>karşılaştırma kelimesi yok</em> (<code>compare</code>, <code>vs</code> geçmez).</p>
+<p>📘 <em>Amaç:</em><br />
+Belirli bir <strong>entity’yi (ör. tek kampanya/adset/ad)</strong> diğer tüm sistemle karşılaştırır (“vs all others”).</p>
+<hr />
+<h3 id="turkce_1">🇹🇷 Türkçe<a class="headerlink" href="#turkce_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Nike kampanyasının CTR performansını test et."</p>
+</li>
+<li>
+<p>"Promo Set reklam setinin CTR’si diğerlerinden farklı mı?"</p>
+</li>
+<li>
+<p>"Creative A reklamının CPC değeri diğer reklamlardan anlamlı şekilde farklı mı?"</p>
+</li>
+<li>
+<p>"Campaign Alpha kampanyasının CTR’ı diğer kampanyalarla karşılaştır."</p>
+</li>
+<li>
+<p>"Kampanya X diğerlerinden daha iyi performans gösteriyor mu?"</p>
+</li>
+<li>
+<p>"Reklam seti Y’nin CTR ortalaması diğerlerinden yüksek mi?"</p>
+</li>
+</ul>
+<h3 id="english_1">🇬🇧 English<a class="headerlink" href="#english_1" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Test CTR performance of Nike campaign against others."</p>
+</li>
+<li>
+<p>"Is the CTR of Promo Set adset significantly different from others?"</p>
+</li>
+<li>
+<p>"Compare CTR of Campaign Alpha with all other campaigns."</p>
+</li>
+<li>
+<p>"Is the CPC of Ad Creative A higher than the rest?"</p>
+</li>
+<li>
+<p>"Does Campaign X perform better than all others?"</p>
+</li>
+<li>
+<p>"Evaluate whether Adset Y’s CTR differs from the rest."</p>
+</li>
+</ul>
+<hr />
+<h2 id="3-adaptive_comparison_test">3️⃣ <strong>adaptive_comparison_test</strong><a class="headerlink" href="#3-adaptive_comparison_test" title="Permanent link">&para;</a></h2>
+<p>💡 <em>Anahtar kelimeler:</em> <code>"compare"</code>, <code>"versus"</code>, <code>"vs"</code>, <code>"with"</code></p>
+<p>📘 <em>Amaç:</em><br />
+İki grup (ör. iki kampanya, iki reklam seti, iki reklam) arasında karşılaştırmalı test yapar.</p>
+<hr />
+<h3 id="turkce_2">🇹🇷 Türkçe<a class="headerlink" href="#turkce_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Nike kampanyasını Adidas kampanyasıyla karşılaştır."</p>
+</li>
+<li>
+<p>"‘Promo Set’ reklam setini ‘Control Set’ ile karşılaştır."</p>
+</li>
+<li>
+<p>"Ad A ve Ad B’nin CTR farkı anlamlı mı?"</p>
+</li>
+<li>
+<p>"Creative 1 vs Creative 2 için CTR karşılaştırması yap."</p>
+</li>
+<li>
+<p>"Campaign Alpha’yı Campaign Beta ile karşılaştır, metrik CTR."</p>
+</li>
+<li>
+<p>"Kampanya X ve Kampanya Y arasında anlamlı fark var mı?"</p>
+</li>
+<li>
+<p>"Adset A ve Adset B’nin CPC farkını test et."</p>
+</li>
+<li>
+<p>"Compare Kampanya A vs Kampanya B performans."</p>
+</li>
+</ul>
+<h3 id="english_2">🇬🇧 English<a class="headerlink" href="#english_2" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Compare Nike campaign with Adidas campaign by CTR."</p>
+</li>
+<li>
+<p>"Compare 'Promo Set' ad set vs 'Control Set'."</p>
+</li>
+<li>
+<p>"Is there a significant difference between Ad A and Ad B CTR?"</p>
+</li>
+<li>
+<p>"Compare Campaign Alpha versus Campaign Beta."</p>
+</li>
+<li>
+<p>"Test CTR difference between Adset A and Adset B."</p>
+</li>
+<li>
+<p>"Perform A/B test comparing two campaigns: Alpha vs Beta."</p>
+</li>
+<li>
+<p>"Compare CPC between Creative 1 and Creative 2."</p>
+</li>
+<li>
+<p>"Campaign X vs Campaign Y — which performs better?"</p>
+</li>
+</ul>
+<hr />
+<h2 id="4-chi_square_test">4️⃣ <strong>chi_square_test</strong><a class="headerlink" href="#4-chi_square_test" title="Permanent link">&para;</a></h2>
+<p>💡 <em>Anahtar kelimeler:</em> <code>"compare all"</code>, <code>"overall"</code>, <code>"distribution"</code>, <code>"across"</code>, <code>"differences between all"</code></p>
+<p>📘 <em>Amaç:</em><br />
+Tüm gruplar arasında (ör. tüm kampanyalar) oransal fark olup olmadığını test eder.<br />
+Genellikle “hepsini karşılaştır” gibi sorgular tetikler.</p>
+<hr />
+<h3 id="turkce_3">🇹🇷 Türkçe<a class="headerlink" href="#turkce_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Tüm kampanyalar arasındaki CTR farkını test et."</p>
+</li>
+<li>
+<p>"Tüm reklam setleri arasında anlamlı fark var mı?"</p>
+</li>
+<li>
+<p>"Kampanyalar genelinde CTR dağılımı anlamlı şekilde farklı mı?"</p>
+</li>
+<li>
+<p>"CTR farklarını tüm reklamlar arasında test et."</p>
+</li>
+<li>
+<p>"Reklamlar arasında genel performans farkı var mı?"</p>
+</li>
+</ul>
+<h3 id="english_3">🇬🇧 English<a class="headerlink" href="#english_3" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Compare all campaigns for CTR differences."</p>
+</li>
+<li>
+<p>"Test whether CTR differs significantly across all ad sets."</p>
+</li>
+<li>
+<p>"Perform chi-square test for CTR distribution across campaigns."</p>
+</li>
+<li>
+<p>"Check if overall ad performance differs among all campaigns."</p>
+</li>
+<li>
+<p>"Is there a significant difference in CTR across all creatives?"</p>
+</li>
+</ul>
+<hr />
+<h2 id="5-advanced_ab_test">5️⃣ <strong>advanced_ab_test</strong><a class="headerlink" href="#5-advanced_ab_test" title="Permanent link">&para;</a></h2>
+<p>💡 <em>Anahtar kelimeler:</em> <code>"does"</code>, <code>"impact"</code>, <code>"effect"</code>, <code>"affect"</code><br />
+📘 <em>Amaç:</em><br />
+Bir veya birden fazla faktörün metrik üzerindeki etkisini inceler (ANOVA).</p>
+<hr />
+<h3 id="turkce_4">🇹🇷 Türkçe<a class="headerlink" href="#turkce_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Adset tipi CTR üzerinde etkili mi?"</p>
+</li>
+<li>
+<p>"Campaign type CTR’ı etkiliyor mu?"</p>
+</li>
+<li>
+<p>"Creative türü CTR üzerinde anlamlı bir etki yaratıyor mu?"</p>
+</li>
+<li>
+<p>"Harcama miktarı CTR’ı etkiler mi?"</p>
+</li>
+<li>
+<p>"Kampanya türü ve hedef kitle etkisi CTR üzerinde anlamlı mı?"</p>
+</li>
+<li>
+<p>"Reklam formatı ve platform etkileri CTR’ı nasıl etkiliyor?"</p>
+</li>
+<li>
+<p>"Adset segmenti CTR değerini etkiler mi?"</p>
+</li>
+<li>
+<p>"CPC üzerinde adset tipi ve platformun etkisini test et."</p>
+</li>
+</ul>
+<h3 id="english_4">🇬🇧 English<a class="headerlink" href="#english_4" title="Permanent link">&para;</a></h3>
+<ul>
+<li>
+<p>"Does ad set type have an impact on CTR?"</p>
+</li>
+<li>
+<p>"Is campaign type affecting CTR?"</p>
+</li>
+<li>
+<p>"Test the effect of creative type on CTR."</p>
+</li>
+<li>
+<p>"Does spend amount impact CTR?"</p>
+</li>
+<li>
+<p>"Evaluate the effect of campaign type and audience on CTR."</p>
+</li>
+<li>
+<p>"How do ad format and platform affect CTR?"</p>
+</li>
+<li>
+<p>"Test whether targeting or placement has a significant effect on CPC."</p>
+</li>
+<li>
+<p>"What factors impact CTR the most?"</p>
+</li>
+</ul>
+<hr />
+<h1 id="ozet-tablo_1">🔍 Özet Tablo<a class="headerlink" href="#ozet-tablo_1" title="Permanent link">&para;</a></h1>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>Anahtar kelimeler</th>
+<th>Türkçe örnek</th>
+<th>İngilizce örnek</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>basic_ab_test</strong></td>
+<td>top, best, rank, show, what is</td>
+<td>“En iyi 10 kampanyayı göster.”</td>
+<td>“Show top 10 campaigns by CTR.”</td>
+</tr>
+<tr>
+<td><strong>specific_entity_ab_test</strong></td>
+<td>tek entity, no compare</td>
+<td>“Nike kampanyası diğerlerinden farklı mı?”</td>
+<td>“Compare CTR of Nike campaign vs others.”</td>
+</tr>
+<tr>
+<td><strong>adaptive_comparison_test</strong></td>
+<td>compare, versus, vs</td>
+<td>“Kampanya A’yı Kampanya B ile karşılaştır.”</td>
+<td>“Compare Campaign A vs Campaign B.”</td>
+</tr>
+<tr>
+<td><strong>chi_square_test</strong></td>
+<td>all, overall, across</td>
+<td>“Tüm kampanyalar arasındaki farkı test et.”</td>
+<td>“Compare all campaigns for CTR differences.”</td>
+</tr>
+<tr>
+<td><strong>advanced_ab_test</strong></td>
+<td>impact, effect, affect, does</td>
+<td>“Adset tipi CTR’ı etkiler mi?”</td>
+<td>“Does campaign type affect CTR?”</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../..", "features": ["navigation.tabs", "navigation.sections", "content.code.copy", "search.suggest", "search.highlight"], "search": "../../assets/javascripts/workers/search.973d3a69.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../assets/javascripts/bundle.92b07e13.min.js"></script>
+      
+    
+  </body>
+</html>
