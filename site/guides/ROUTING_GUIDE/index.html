@@ -1927,6 +1927,208 @@ Bir veya birden fazla faktörün metrik üzerindeki etkisini inceler (ANOVA).</p
 </tr>
 </tbody>
 </table>
+<hr />
+<h2 id="analyze-agent-trends-behavior"><code>analyze</code> — Agent, Trends &amp; Behavior<a class="headerlink" href="#analyze-agent-trends-behavior" title="Permanent link">&para;</a></h2>
+<ul>
+<li>“How did <strong>revenue</strong> evolve over time? Any notable trends or spikes?”</li>
+<li>“Analyze performance changes for <strong>CTR</strong> last month.”</li>
+<li>“What explains the drop in <strong>conversions</strong> last week?”</li>
+<li>“Investigate anomalies in <strong>cost_per_acquisition</strong>.”</li>
+</ul>
+<h3 id="english-queries">🇬🇧 English Queries<a class="headerlink" href="#english-queries" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>🧠 Category</th>
+<th>💬 Example Query</th>
+<th>🔍 What It Does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Basic Summary</strong></td>
+<td>What are the columns in the dataset and their data types?</td>
+<td>Returns <code>df.info()</code> summary.</td>
+</tr>
+<tr>
+<td></td>
+<td>Show dataset summary statistics.</td>
+<td>Runs <code>df.describe()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>List all available columns.</td>
+<td>Lists <code>df.columns</code>.</td>
+</tr>
+<tr>
+<td><strong>Averages &amp; Totals</strong></td>
+<td>What is the average CTR?</td>
+<td>Computes mean of <code>CTR</code> column.</td>
+</tr>
+<tr>
+<td></td>
+<td>Calculate total spend across all campaigns.</td>
+<td>Runs <code>df["spend"].sum()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Find the median CPC.</td>
+<td>Uses <code>df["CPC"].median()</code>.</td>
+</tr>
+<tr>
+<td><strong>Distributions</strong></td>
+<td>Describe the distribution of impressions.</td>
+<td>Runs <code>df["impressions"].describe()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Show value counts for device_type.</td>
+<td>Uses <code>df["device_type"].value_counts()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Plot a histogram of conversion rates.</td>
+<td>Runs <code>df["conversion_rate"].plot(kind="hist")</code>.</td>
+</tr>
+<tr>
+<td><strong>Trends &amp; Evolution</strong></td>
+<td>Plot CTR trend over time.</td>
+<td>Uses line plot over time column.</td>
+</tr>
+<tr>
+<td></td>
+<td>Show how spend changed over the last 30 days.</td>
+<td>Calculates and visualizes daily change.</td>
+</tr>
+<tr>
+<td></td>
+<td>Detect which metric shows the strongest increasing trend.</td>
+<td>Analyzes numeric column slopes.</td>
+</tr>
+<tr>
+<td><strong>Comparisons &amp; Correlations</strong></td>
+<td>Compute correlation between spend and CTR.</td>
+<td>Uses <code>df[["spend","CTR"]].corr()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Which columns are most correlated with ROAS?</td>
+<td>Calculates correlation matrix.</td>
+</tr>
+<tr>
+<td><strong>Missing &amp; Data Quality</strong></td>
+<td>How many missing values are there per column?</td>
+<td>Uses <code>df.isna().sum()</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Show percentage of missing data per column.</td>
+<td>Computes <code>(df.isna().mean()*100)</code>.</td>
+</tr>
+<tr>
+<td></td>
+<td>Identify columns with constant values.</td>
+<td>Detects columns where <code>df[col].nunique() == 1</code>.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="turkce-sorgular">🇹🇷 Türkçe Sorgular<a class="headerlink" href="#turkce-sorgular" title="Permanent link">&para;</a></h3>
+<table>
+<thead>
+<tr>
+<th>🧠 Kategori</th>
+<th>💬 Sorgu Örneği</th>
+<th>🔍 Ne Yapar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>Temel Özet</strong></td>
+<td>Veri setindeki sütunlar ve veri tipleri nelerdir?</td>
+<td><code>df.info()</code> çıktısını verir.</td>
+</tr>
+<tr>
+<td></td>
+<td>Veri setinin genel özet istatistiklerini göster.</td>
+<td><code>df.describe()</code> çalıştırır.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tüm sütun adlarını listele.</td>
+<td><code>df.columns</code> döndürür.</td>
+</tr>
+<tr>
+<td><strong>Ortalama &amp; Toplam</strong></td>
+<td>CTR ortalaması nedir?</td>
+<td><code>df["CTR"].mean()</code> hesaplar.</td>
+</tr>
+<tr>
+<td></td>
+<td>Kampanyalar arasındaki toplam harcamayı (spend) bul.</td>
+<td><code>df["spend"].sum()</code> döndürür.</td>
+</tr>
+<tr>
+<td></td>
+<td>CPC değerinin medyanını göster.</td>
+<td><code>df["CPC"].median()</code> hesaplar.</td>
+</tr>
+<tr>
+<td><strong>Dağılımlar</strong></td>
+<td>Impression sütununun dağılımını açıkla.</td>
+<td><code>df["impressions"].describe()</code> çalıştırır.</td>
+</tr>
+<tr>
+<td></td>
+<td>Cihaz türlerine göre kaç satır var?</td>
+<td><code>df["device_type"].value_counts()</code> döndürür.</td>
+</tr>
+<tr>
+<td></td>
+<td>Conversion rate histogramını çiz.</td>
+<td><code>df["conversion_rate"].plot(kind="hist")</code>.</td>
+</tr>
+<tr>
+<td><strong>Trendler &amp; Değişimler</strong></td>
+<td>CTR zaman içindeki trendini çiz.</td>
+<td>Zaman serisi grafiği oluşturur.</td>
+</tr>
+<tr>
+<td></td>
+<td>Spend son 30 günde nasıl değişti?</td>
+<td>Günlük fark ve trend hesaplar.</td>
+</tr>
+<tr>
+<td></td>
+<td>Hangi metrik yükselen bir eğilim gösteriyor?</td>
+<td>Eğilim analizi yapar.</td>
+</tr>
+<tr>
+<td><strong>Korelasyon &amp; Karşılaştırmalar</strong></td>
+<td>Spend ile CTR arasındaki korelasyonu hesapla.</td>
+<td><code>df[["spend","CTR"]].corr()</code> çalıştırır.</td>
+</tr>
+<tr>
+<td></td>
+<td>ROAS ile en yüksek korelasyona sahip sütun hangisi?</td>
+<td>Korelasyon matrisi hesaplar.</td>
+</tr>
+<tr>
+<td><strong>Eksik Veri &amp; Kalite</strong></td>
+<td>Her sütunda kaç eksik değer var?</td>
+<td><code>df.isna().sum()</code> döndürür.</td>
+</tr>
+<tr>
+<td></td>
+<td>Sütunlardaki eksik veri yüzdesini göster.</td>
+<td><code>(df.isna().mean()*100)</code> hesaplar.</td>
+</tr>
+<tr>
+<td></td>
+<td>Tüm satırlarda sabit değer taşıyan sütunları bul.</td>
+<td><code>df[col].nunique() == 1</code> kontrol eder.</td>
+</tr>
+</tbody>
+</table>
 
 
 
