@@ -1,12 +1,133 @@
 
 # Time Series Analysis
 
-| Metric Sayısı | 🧭 Prophet | 🔍 Granger | Açıklama (Özet)                                                  | 🇬🇧 Example                                                  | 🇹🇷 Örnek                                               |
-| ------------- | ---------- | ---------- | ---------------------------------------------------------------- | ------------------------------------------------------------- | -------------------------------------------------------- |
-| 0             | ✅          | ❌          | Metrik belirtilmez → tüm metrikler için Prophet tahmini yapılır. | _Forecast overall campaign performance for the next 30 days._ | _Genel kampanya performansının 30 günlük tahminini yap._ |
-| 1             | ✅          | ✅          | Tek metrik (örn. CTR) → Prophet + Granger birlikte çalışır.      | _Forecast CTR for the next 15 days._                          | _CTR metriğinin önümüzdeki 15 günlük tahminini yap._     |
-| 2             | ❌          | ✅          | İki metrik varsa yalnızca Granger nedensellik testi yapılır.     | _Does spend Granger-cause CTR?_                               | _Spend metriği CTR’ı Granger anlamında etkiliyor mu?_    |
-| 3+            | ❌          | ❌          | Fazla metrik varsa Prophet/Granger çalışmaz → uyarı döner.       | _Compare CTR, spend and revenue trends together._             | _CTR, spend ve revenue metriklerini birlikte analiz et._ |
+## 🧠 1️⃣ GENERAL MODE
+
+**Amaç:** Belirli bir reklam (`ad_name`) için tüm metriklerin forecast edilmesi  
+**Model:** Prophet (tüm numerik kolonlar için)
+
+| 🇹🇷 Örnek Sorgular (Türkçe) | 🇬🇧 İngilizce Karşılığı |
+| --- | --- |
+| “TR_purchase_meta_sales_maxconv_retargeting_jun2023 kampanyasındaki kubradeny2 reklamı için genel performans tahminini yap.” | “Forecast all metrics for ad kubradeny2 in campaign TR_purchase_meta_sales_maxconv_retargeting_jun2023.” |
+| “Aynı kampanyadaki kubradeny2 reklamının tüm metriklerini 15 gün forecast et.” | “Forecast all metrics for ad kubradeny2 over the next 15 days.” |
+
+📊 **Mode JSON**
+
+```json
+{
+  "mode": "general",
+  "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_jun2023",
+  "ad_name": "kubradeny2",
+  "metrics": [],
+  "forecast_horizon": 15
+}
+
+
+---
+
+## 📈 2️⃣ SINGLE_METRIC MODE
+
+**Amaç:** Belirli bir reklam için tek bir metriğin Prophet forecast + Granger analizi  
+**Model:** Prophet + Granger
+
+| 🇹🇷 Türkçe Örnek | 🇬🇧 İngilizce Karşılığı |
+| --- | --- |
+| “TR_purchase_meta_sales_maxconv_retargeting_jun2023 kampanyasındaki kubradeny2 reklamının CTR serisini tahmin et.” | “Forecast CTR for ad kubradeny2 in campaign TR_purchase_meta_sales_maxconv_retargeting_jun2023.” |
+| “Aynı kampanyadaki kubradeny2 reklamının revenue metriğini 45 gün forecast et.” | “Forecast revenue for ad kubradeny2 for the next 45 days.” |
+| “kubradeny2 reklamında spend trendini tahmin et.” | “Forecast spend trend for ad kubradeny2.” |
+
+📊 **Mode JSON**
+
+```json
+{
+  "mode": "single_metric",
+  "metrics": ["ctr"],
+  "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_jun2023",
+  "ad_name": "kubradeny2",
+  "forecast_horizon": 30
+}
+
+
+---
+## 🔗 3️⃣ PAIRWISE_GRANGER MODE
+
+**Amaç:** Aynı reklam için iki metrik arasındaki Granger nedenselliğini test etmek  
+**Model:** Granger Test (Prophet yok)
+
+| 🇹🇷 Türkçe Örnek | 🇬🇧 İngilizce Karşılığı |
+| --- | --- |
+| “TR_purchase_meta_sales_maxconv_retargeting_jun2023 kampanyasındaki kubradeny2 reklamında spend CTR’ı Granger anlamında etkiliyor mu?” | “Does spend Granger-cause CTR for ad kubradeny2 in campaign TR_purchase_meta_sales_maxconv_retargeting_jun2023?” |
+| “kubradeny2 reklamında clicks conversions’ı etkiliyor mu?” | “Do clicks Granger-cause conversions for ad kubradeny2?” |
+
+📊 **Mode JSON**
+
+```json
+{
+  "mode": "pairwise_granger",
+  "metrics": ["spend", "ctr"],
+  "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_jun2023",
+  "ad_name": "kubradeny2"
+}
+
+---
+## ⚙️ 4️⃣ MULTI_COLUMN_AMBIGUOUS MODE
+
+**Amaç:** Birden fazla metrik belirtilirse Prophet/Granger çalışmaz, uyarı döner  
+**Model:** None → kullanıcı yönlendirilir
+
+| 🇹🇷 Türkçe Örnek | 🇬🇧 İngilizce Karşılığı |
+| --- | --- |
+| “TR_purchase_meta_sales_maxconv_retargeting_jun2023 kampanyasındaki kubradeny2 reklamında CTR, spend ve revenue metriklerini birlikte analiz et.” | “Compare CTR, spend, and revenue for ad kubradeny2 in campaign TR_purchase_meta_sales_maxconv_retargeting_jun2023.” |
+
+📊 **Mode JSON**
+
+```json
+{
+  "mode": "multi_column_ambiguous",
+  "metrics": ["ctr", "spend", "revenue"],
+  "campaign_name": "TR_purchase_meta_sales_maxconv_retargeting_jun2023",
+  "ad_name": "kubradeny2"
+}
+
+---
+## 🧮 5️⃣ HORIZON Örnekleri
+
+> **Horizon** = forecast süresi (gün cinsinden)
+
+| 🗓️ Sorgu | 📅 Horizon |
+| --- | --- |
+| “...önümüzdeki 7 gün için tahmin et.” | 7 |
+| “...30 gün sonrası için forecast yap.” | 30 |
+| “...45-day forecast oluştur.” | 45 |
+
+📊 **JSON Örneği**
+
+```json
+"forecast_horizon": 45
+
+
+---
+## 🚫 6️⃣ Geçersiz (Artık Desteklenmeyen) Örnekler
+
+Aşağıdaki ifadeler sistem tarafından reddedilir ⛔
+
+| ⚠️ Geçersiz Sorgu | 🧩 Neden |
+| --- | --- |
+| “Genel performansı tahmin et.” | Kampanya/ad belirtilmemiş. |
+| “Tüm kampanyalar için forecast yap.” | Prophet tekil seri gerektirir. |
+| “Clicks metriğini analiz et.” | Hangi kampanya/ad belirtilmemiş. |
+
+---
+
+## ✅ 7️⃣ Özet Tablo
+
+|Mode|Prophet|Granger|Gerekli Alanlar|
+|---|---|---|---|
+|general|✅|❌|campaign + ad|
+|single_metric|✅|✅|campaign + ad + metric|
+|pairwise_granger|❌|✅|campaign + ad + 2 metrics|
+|multi_column|❌|❌|campaign + ad + ≥3 metrics|
+
 
 ---
 # 🎯 **DoWhy / EconML Agent (dowEcon)**
